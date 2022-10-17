@@ -1,183 +1,190 @@
 .header {
-	width: 100%;
-	position: absolute;
-	z-index: 1000;
-	// .header__container
-	&__container {
-		display: flex;
-		min-height: 114px;
-		align-items: center;
-		@media (max-width: $tablet) {
-			min-height: 84px;
-		}
-		@media (max-width: $mobile) {
-			min-height: 64px;
-		}
-	}
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    // .header__container
+    &__container {
+        display: flex;
+        min-height: rem(114);
+        align-items: center;
+        @media (max-width: $tablet) {
+            min-height: rem(84);
+        }
+        @media (max-width: $mobile) {
+            min-height: rem(64);
+        }
+    }
 
-	// .header__logo
-	&__logo {
-		z-index: 10;
-		@media (max-width: $mobileSmall) {
-			flex: 0 0 40px;
-			overflow: hidden;
-		}
-	}
+    // .header__logo
+    &__logo {
+        z-index: 10;
+        @media (max-width: $mobileSmall) {
+            flex: 0 0 rem(40);
+            overflow: hidden;
+        }
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(rem(-30), 0, 0.5, 0, true);
+    }
 
-	// .header__menu
-	&__menu {
-		display: flex;
-		flex: 1 1 auto;
-		justify-content: flex-end;
-	}
+    // .header__menu
+    &__menu {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+    }
 
-	// .header__button
-	&__button {
-		display: flex;
-		flex: 0 0 252px;
-		justify-content: flex-end;
-		z-index: 10;
-		@media (max-width: $tablet) {
-			flex: 0 0 170px;
-		}
-	}
+    // .header__button
+    &__button {
+        display: flex;
+        flex: 0 0 rem(252);
+        justify-content: flex-end;
+        z-index: 10;
+        @media (max-width: $tablet) {
+            flex: 0 0 rem(170);
+        }
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(rem(30), 0, 0.5, 0, true);
+    }
 }
 .menu {
-	// .menu__body
+    // .menu__body
 
-	&__body {
-		@media (max-width: $mobile) {
-			padding: 104px 15px 30px 15px;
-			overflow: auto;
-			position: fixed;
-			z-index: 5;
-			top: -100%;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			opacity: 0;
-			visibility: hidden;
-			background-color: $white;
-			transition: all 0.5s ease 0s;
-			&::after {
-				content: "";
-				position: fixed;
-				width: 100%;
-				height: 64px;
-				top: 0;
-				left: 0;
-				background-color: $white;
-			}
-			.menu-open & {
-				top: 0;
-				opacity: 1;
-				visibility: visible;
-			}
-		}
-	}
+    &__body {
+        @media (max-width: $mobile) {
+            padding: rem(104) rem(15) rem(30) rem(15);
+            overflow: auto;
+            position: fixed;
+            z-index: 5;
+            top: -100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            background-color: $white;
+            transition: top 0.5s ease 0s, opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+            &::after {
+                content: "";
+                position: fixed;
+                width: 100%;
+                height: rem(64);
+                top: 0;
+                left: 0;
+                background-color: $white;
+            }
+            .menu-open & {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
 
-	// .menu__list
+    // .menu__list
 
-	&__list {
-		@media (max-width: $mobile) {
-			text-align: center;
-		}
-		@media (min-width: $mobile) {
-			display: flex;
-			align-items: center;
-		}
-	}
+    &__list {
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+        @media (min-width: $mobile) {
+            display: flex;
+            align-items: center;
+        }
+    }
 
-	// .menu__item
+    // .menu__item
 
-	&__item {
-		@media (min-width: $mobile) {
-			margin-right: 40px;
-			@media (max-width: $tablet) {
-				margin-right: 30px;
-			}
-		}
-		@media (max-width: $mobile) {
-			&:not(:last-child) {
-				margin-bottom: 25px;
-			}
-		}
-		@media (max-width: $mobileSmall) {
-			&:not(:last-child) {
-				margin-bottom: 20px;
-			}
-		}
-	}
+    &__item {
+        @media (min-width: $mobile) {
+            margin-right: rem(40);
+            @media (max-width: $tablet) {
+                margin-right: rem(30);
+            }
+        }
+        @media (max-width: $mobile) {
+            &:not(:last-child) {
+                margin-bottom: rem(25);
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
 
-	// .menu__link
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(0, 0, 0.5, 0.3, true);
+    }
 
-	&__link {
-		text-transform: uppercase;
-		font-weight: 700;
-		font-size: rem(10);
-		line-height: math.div(12, 10);
-		letter-spacing: 0.14em;
-		transition: color 0.3s;
-		@media (any-hover: hover) {
-			&:hover {
-				color: $black;
-			}
-		}
-		@media (max-width: $mobile) {
-			font-size: rem(18);
-		}
-	}
+    // .menu__link
 
-	// .menu__icon
+    &__link {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: rem(10);
+        line-height: math.div(12, 10);
+        letter-spacing: 0.14em;
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $black;
+            }
+        }
+        @media (max-width: $mobile) {
+            font-size: rem(18);
+        }
+    }
 
-	&__icon {
-	}
+    // .menu__icon
+
+    &__icon {
+    }
 }
 
 //Burger
 .icon-menu {
-	display: none;
-	margin-left: 15px;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		height: rem(18);
-		width: rem(30);
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.5s ease 0s;
-			right: 0;
-			position: absolute;
-			width: rem(30);
-			height: rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-		.menu-open & {
-			span {
-				opacity: 0;
-				width: 0;
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
+    display: none;
+    margin-left: rem(15);
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        height: rem(18);
+        width: rem(30);
+        cursor: pointer;
+        z-index: 5;
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.5s ease 0s;
+            right: 0;
+            position: absolute;
+            width: rem(30);
+            height: rem(2);
+            background-color: #000;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - rem(1));
+        }
+        .menu-open & {
+            span {
+                opacity: 0;
+                width: 0;
+            }
+            &::before {
+                top: calc(50% - rem(1));
+                transform: rotate(-45deg);
+            }
+            &::after {
+                bottom: calc(50% - rem(1));
+                transform: rotate(45deg);
+            }
+        }
+    }
 }

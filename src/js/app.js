@@ -11,3 +11,5 @@ import * as flsFunctions from "./functions.js";
 flsFunctions.isWebp();
 /* Модуль для работы с меню (Бургер) */
 flsFunctions.menuInit();
+
+import "./watcher.js";

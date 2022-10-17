@@ -9,7 +9,7 @@
         line-height: 126%;
         color: $black;
         &:not(:last-child) {
-            margin-bottom: 12px;
+            margin-bottom: rem(12);
         }
         @media (max-width: $tablet) {
             font-size: rem(36);
@@ -31,13 +31,13 @@
         line-height: 138.5%;
         letter-spacing: 0.08em;
         &:not(:last-child) {
-            margin-bottom: 24px;
+            margin-bottom: rem(24);
             @media (max-width: $mobile) {
-                margin-bottom: 16 px;
+                margin-bottom: rem(16);
             }
         }
         &_mw {
-            max-width: 620px;
+            max-width: rem(620);
             margin: 0 auto;
         }
     }

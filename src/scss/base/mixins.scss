@@ -88,3 +88,23 @@
         }
     }
 }
+
+@mixin inViewBasic($startPosX, $startPosY, $speed, $delay, $child: false) {
+    transform: translate($startPosX, $startPosY);
+    transition: transform #{$speed}s ease #{$delay}s, opacity #{$speed}s ease #{$delay}s;
+    opacity: 0;
+    visibility: hidden;
+    @if ($child == true) {
+        ._watcher-view & {
+            opacity: 1 !important ;
+            visibility: visible !important;
+            transform: translate(0, 0) !important;
+        }
+    } @else {
+        &._watcher-view {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translate(0, 0) !important;
+        }
+    }
+}

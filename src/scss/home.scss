@@ -6,24 +6,24 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        padding: 150px 15px 50px 15px;
+        padding: rem(150) rem(15) rem(50) rem(15);
         position: relative;
         @media (max-width: $mobile) {
-            padding: 100px 15px 30px 15px;
+            padding: rem(100) rem(15) rem(30) rem(15);
         }
         &::before {
             content: "";
             position: absolute;
-            right: 265px;
+            right: rem(265);
             top: 0;
             height: 100%;
             width: 100vw;
             transform: translate(100%, 0px);
             background-color: $primary;
-            border-radius: 30px 0px 0px 30px;
+            border-radius: rem(30) 0px 0px rem(30);
             @media (max-width: $tablet) {
-                right: 185px;
-                border-radius: 20px 0px 0px 20px;
+                right: rem(185);
+                border-radius: rem(20) 0px 0px rem(20);
             }
             @media (max-width: $mobile) {
                 display: none;
@@ -35,7 +35,7 @@
     &__content {
         @media (min-width: $mobile) {
             flex: 0 1 48%;
-            padding-left: 20px;
+            padding-left: rem(20);
         }
         @media (max-width: $mobile) {
             flex: 1 1 100%;
@@ -45,7 +45,21 @@
     // .get-started__block-text
     &__block-text {
         @media (min-width: $mobile) {
-            max-width: 410px;
+            max-width: rem(410);
+        }
+        .block-text__title {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0, true);
+        }
+
+        .block-text__text {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0.3, true);
+        }
+
+        .block-text__button {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0.6, true);
         }
     }
 
@@ -55,6 +69,9 @@
             padding: rem(60) 0 0 rem(20);
         }
         flex: 1 1 100%;
+
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(0, 0, 0.5, 1);
     }
 
     // .get-started__image
@@ -69,6 +86,8 @@
             text-align: center;
             padding: rem(30) 0;
         }
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(0, 0, 0.5, 0);
     }
 }
 
@@ -77,12 +96,12 @@
     align-items: center;
     // .video-get-started__icon
     &__icon {
-        flex: 0 0 44px;
+        flex: 0 0 rem(44);
     }
 
     // .video-get-started__body
     &__body {
-        padding-left: 12px;
+        padding-left: rem(12);
     }
 
     // .video-get-started__title
@@ -109,15 +128,15 @@
 //========================================================================================================================================================
 
 .stay-safe {
-    padding: 80px 0;
+    padding: rem(80) 0;
     @media (max-width: $tablet) {
-        padding: 60px 0;
+        padding: rem(60) 0;
     }
     @media (max-width: $mobile) {
-        padding: 40px 0;
+        padding: rem(40) 0;
     }
     @media (max-width: $mobileSmall) {
-        padding: 30px 0;
+        padding: rem(30) 0;
     }
 
     // .stay-safe__container
@@ -133,7 +152,7 @@
     &__media {
         flex: 0 1 50%;
         @media (min-width: $tablet) {
-            padding-left: 47px;
+            padding-left: rem(47);
         }
     }
 
@@ -141,28 +160,42 @@
     &__content {
         flex: 0 1 50%;
         @media (max-width: $mobile) {
-            margin-bottom: 30px;
+            margin-bottom: rem(30);
         }
     }
 
     // .stay-safe__block-text
     &__block-text {
+        .block-text__title {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(30), 0, 0.5, 0, true);
+        }
+
+        .block-text__text {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(30), 0, 0.5, 0.3, true);
+        }
+
+        .block-text__button {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(30), 0, 0.5, 0.6, true);
+        }
     }
 }
 .media-stay-safe {
-    width: 373px;
+    width: rem(373);
     text-align: center;
     position: relative;
-    padding: 56px 0px 26px 0px;
+    padding: rem(56) 0px rem(26) 0px;
     @media (max-width: $mobileSmall) {
-        padding: 35px 0px 26px 0px;
-        width: 290px;
+        padding: rem(35) 0px rem(26) 0px;
+        width: rem(290);
     }
 
     // .media-stay-safe__image
     &__image {
-        box-shadow: 2px 4px 32px rgba(0, 0, 0, 0.12);
-        border-radius: 16px;
+        box-shadow: rem(2) rem(4) rem(32) rgba(0, 0, 0, 0.12);
+        border-radius: rem(16);
         position: relative;
         display: inline-block;
         z-index: 2;
@@ -170,47 +203,59 @@
         &::after {
             content: "";
             position: absolute;
-            width: calc(100% - 24px);
-            padding: 0px 12px;
-            height: 27px;
-            bottom: -12px;
-            left: 12px;
+            width: calc(100% - rem(24));
+            padding: 0px rem(12);
+            height: rem(27);
+            bottom: rem(-12);
+            left: rem(12);
             z-index: -1;
             background: #f0f0f0;
             opacity: 0.5;
-            border-radius: 16px;
+            border-radius: rem(16);
         }
         img {
             max-width: 100%;
         }
+
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(0, 0, 0.5, 0.3, true);
     }
 
     &__item {
         position: absolute;
         z-index: -1;
         background-color: $primary;
-        border-radius: 30px;
-        width: 77px;
-        height: 77px;
+        border-radius: rem(30);
+        width: rem(77);
+        height: rem(77);
 
         // .media-stay-safe__item_1
         &_1 {
-            height: 147px;
-            width: 147px;
+            height: rem(147);
+            width: rem(147);
             left: 0px;
             top: 0px;
+
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0, true);
         }
 
         // .media-stay-safe__item_2
         &_2 {
-            left: 33px;
+            left: rem(33);
             bottom: 0px;
+
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(30), 0, 0.5, 0, true);
         }
 
         // .media-stay-safe__item_3
         &_3 {
-            bottom: 107px;
-            right: 34px;
+            bottom: rem(107);
+            right: rem(34);
+
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0, true);
         }
     }
 }
@@ -219,9 +264,9 @@
 
 .experts {
     background-color: $background;
-    padding: 103px 0px 116px 0px;
+    padding: rem(103) 0px rem(116) 0px;
     @media (max-width: $tablet) {
-        padding: 80px 0px 30px 0;
+        padding: rem(80) 0px rem(30) 0;
     }
 
     // .experts__container
@@ -244,15 +289,29 @@
     &__content {
         @media (min-width: $mobile) {
             flex: 0 1 50%;
-            padding-right: 20px;
+            padding-right: rem(20);
         }
-        margin-bottom: 30px;
+        margin-bottom: rem(30);
     }
 
     // .experts__block-text
     &__block-text {
         @media (min-width: $mobile) {
-            max-width: 400px;
+            max-width: rem(400);
+        }
+        .block-text__title {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0, true);
+        }
+
+        .block-text__text {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0.3, true);
+        }
+
+        .block-text__button {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(rem(-30), 0, 0.5, 0.6, true);
         }
     }
 
@@ -262,11 +321,11 @@
             padding-bottom: 30%;
             flex: 0 1 50%;
         }
-        box-shadow: 0px 4px 18px rgba(88, 126, 236, 0.18);
-        border-radius: 8px;
+        box-shadow: 0px rem(4) rem(18) rgba(88, 126, 236, 0.18);
+        border-radius: rem(8);
         padding-bottom: 50%;
         position: relative;
-        min-height: 200px;
+        min-height: rem(200);
         overflow: hidden;
         iframe {
             position: absolute;
@@ -276,24 +335,26 @@
             left: 0;
             object-fit: cover;
         }
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(rem(30), 0, 0.5, 0, true);
     }
 }
 .statistics-experts {
-    max-width: 654px;
+    max-width: rem(654);
     margin: 0px auto;
     position: relative;
 
     // .statistics-experts__body
     &__body {
         background-color: $white;
-        box-shadow: 0px 2px 24px rgba(88, 126, 236, 0.15);
-        border-radius: 16px;
+        box-shadow: 0px rem(2) rem(24) rgba(88, 126, 236, 0.15);
+        border-radius: rem(16);
         position: relative;
         z-index: 2;
         margin-bottom: rem(80);
-        min-height: 117px;
+        min-height: rem(117);
         @media (max-width: $mobile) {
-            margin-bottom: 50px;
+            margin-bottom: rem(50);
         }
     }
 
@@ -301,45 +362,59 @@
     &__decor {
         position: absolute;
         background-color: $primary;
-        transform: rotate(-30deg);
-        border-radius: 30px;
-
+        border-radius: rem(30);
+        transition: transform 0.5s ease 0.3s, opacity 0.5s ease 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        ._watcher-view & {
+            opacity: 1 !important ;
+            visibility: visible !important;
+            transform: translate(0, 0) rotate(-30deg) !important;
+        }
         // .statistics-experts__decor_1
         &_1 {
-            width: 65px;
-            height: 65px;
-            bottom: -21px;
-            left: -21px;
-            border-radius: 16px;
+            width: rem(65);
+            height: rem(65);
+            bottom: rem(-21);
+            left: rem(-21);
+            border-radius: rem(16);
+            // ANIMATION ==================================================================================================================================================
+            transform: translate(rem(-30), 0) rotate(-30deg);
         }
 
         // .statistics-experts__decor_2
         &_2 {
-            width: 97px;
-            height: 97px;
+            width: rem(97);
+            height: rem(97);
             right: 50%;
-            top: -40px;
-            transform: rotate(105deg);
+            top: rem(-40);
+            // ANIMATION ==================================================================================================================================================
+            transform: translate(0, rem(-30)) rotate(105deg);
+            ._watcher-view & {
+                transform: translate(0, 0) rotate(105deg) !important;
+            }
         }
 
         // .statistics-experts__decor_3
         &_3 {
-            width: 128px;
-            height: 128px;
-            right: -55px;
+            width: rem(128);
+            height: rem(128);
+            right: rem(-55);
             top: 0px;
+            // ANIMATION ==================================================================================================================================================
+            transform: translate(rem(30), 0) rotate(-30deg);
         }
     }
 }
 .body-statistics-experts {
-    padding: 20px 80px;
+    padding: rem(20) rem(80);
     display: flex;
     align-items: center;
     @media (max-width: $tablet) {
-        padding: 20px 60px;
+        padding: rem(20) rem(60);
     }
     @media (max-width: $mobile) {
-        padding: 25px;
+        padding: rem(25);
     }
     @media (max-width: $mobileSmall) {
         flex-direction: column;
@@ -350,12 +425,14 @@
         flex: 0 1 25%;
         @media (max-width: $mobileSmall) {
             &:not(:last-child) {
-                margin-bottom: 15px;
+                margin-bottom: rem(15);
             }
         }
         &:last-child {
             flex: 0 1 50%;
         }
+        // ANIMATION ==================================================================================================================================================
+        @include inViewBasic(0, 0, 0.5, 0, true);
     }
 
     // .body-statistics-experts__value
@@ -371,7 +448,7 @@
     // .body-statistics-experts__text
     &__text {
         font-weight: 700;
-        font-size: 11px;
+        font-size: rem(11);
         line-height: 118%;
         letter-spacing: 0.37em;
         text-transform: uppercase;
@@ -382,15 +459,15 @@
 //========================================================================================================================================================
 
 .healthcare {
-    padding: 100px 0px 30px 0;
+    padding: rem(100) 0px rem(30) 0;
     @media (max-width: $tablet) {
-        padding: 80px 0px 30px 0px;
+        padding: rem(80) 0px rem(30) 0px;
     }
     @media (max-width: $mobile) {
-        padding: 40px 0px 30px 0px;
+        padding: rem(40) 0px rem(30) 0px;
     }
     @media (max-width: $mobileSmall) {
-        padding: 30px 0px;
+        padding: rem(30) 0px;
     }
     // .healthcare__container
     &__container {
@@ -399,23 +476,32 @@
     // .healthcare__block-text
     &__block-text {
         margin-bottom: rem(45);
+        .block-text__title {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(0, rem(30), 0.5, 0);
+        }
+
+        .block-text__text {
+            // ANIMATION ==================================================================================================================================================
+            @include inViewBasic(0, rem(30), 0.5, 0.3);
+        }
     }
 
     // .healthcare__items
     &__items {
         display: flex;
-        max-width: 980px;
+        max-width: rem(980);
         margin: 0px auto;
-        gap: 72px;
+        gap: rem(72);
         @media (max-width: $pc) {
-            gap: 50px;
+            gap: rem(50);
         }
         @media (max-width: $tablet) {
-            gap: 36px;
+            gap: rem(36);
         }
         @media (max-width: $mobile) {
             flex-direction: column;
-            gap: 25px;
+            gap: rem(25);
         }
     }
 }
@@ -426,63 +512,95 @@
         flex: 0 1 33.333%;
         position: relative;
         background: $white;
-        box-shadow: 0px 4px 18px rgba(88, 126, 236, 0.18);
-        border-radius: 8px;
+        box-shadow: 0px rem(4) rem(18) rgba(88, 126, 236, 0.18);
+        border-radius: rem(8);
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 36px 17px;
+        padding: rem(36) rem(17);
+        top: rem(30);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease 0s, visibility 0.5s ease 0s, top 0.5s ease 0s;
         &::before,
         &::after {
             content: "";
             position: absolute;
-            z-index: -1;
             background: $primary;
-            transform: rotate(-30deg);
+            transition: transform 0.5s ease 0.5s, opacity 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
         }
         @media (max-width: $pc) {
-            padding: 25px 15px;
+            padding: rem(25) rem(15);
+        }
+        &._watcher-view {
+            opacity: 1;
+            visibility: visible;
+            top: 0;
+            &::before,
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, 0) rotate(-30deg);
+            }
         }
 
         &_1 {
             &::before {
-                width: 65.75px;
-                height: 65.75px;
-                left: -20px;
-                bottom: -40px;
-                border-radius: 16px;
+                width: rem(65.75);
+                height: rem(65.75);
+                left: rem(-20);
+                bottom: rem(-40);
+                border-radius: rem(16);
+                // ANIMATION ==================================================================================================================================================
+                transform: translate(rem(30), rem(-30)) rotate(-30deg);
             }
             &::after {
-                width: 96.96px;
-                height: 96.96px;
-                right: -55px;
-                top: 35px;
-                border-radius: 30px;
-                transform: rotate(105deg);
+                width: rem(96.96);
+                height: rem(96.96);
+                right: rem(-55);
+                top: rem(35);
+                border-radius: rem(30);
+                // ANIMATION ==================================================================================================================================================
+                transform: translate(rem(-30), 0) rotate(105deg);
+            }
+            &._watcher-view {
+                &::after {
+                    transform: translate(0, 0) rotate(105deg) !important;
+                }
             }
         }
         &_2 {
             &::after {
-                width: 127.47px;
-                height: 127.47px;
-                right: -70px;
-                bottom: -30px;
-                border-radius: 30px;
+                width: rem(127.47);
+                height: rem(127.47);
+                right: rem(-70);
+                bottom: rem(-30);
+                border-radius: rem(30);
+                // ANIMATION ==================================================================================================================================================
+                transform: translate(rem(-30), rem(-30)) rotate(-30deg);
             }
         }
         &_3 {
             &::after {
-                width: 65.75px;
-                height: 65.75px;
-                right: -20px;
-                top: -40px;
-                border-radius: 16px;
+                width: rem(65.75);
+                height: rem(65.75);
+                right: rem(-20);
+                top: rem(-40);
+                border-radius: rem(16);
+
+                // ANIMATION ==================================================================================================================================================
+                transform: translate(rem(-30), rem(30)) rotate(-30deg);
                 @media (max-width: $mobile) {
                     right: auto;
                     top: auto;
-                    left: -20px;
-                    bottom: -40px;
+                    left: rem(-20);
+                    bottom: rem(-40);
+                    // ANIMATION ==================================================================================================================================================
+                    transform: translate(rem(30), rem(-30)) rotate(-30deg);
                 }
             }
         }
@@ -507,7 +625,7 @@
         letter-spacing: 0.08em;
         color: $black;
         &:not(:last-child) {
-            margin-bottom: 4px;
+            margin-bottom: rem(4);
         }
     }
 
