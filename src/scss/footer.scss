@@ -1,0 +1,28 @@
+.footer {
+    padding: 45px 0px;
+    @media (max-width: $mobile) {
+        padding: 25px 0px;
+    }
+    // .footer__container
+    &__container {
+    }
+
+    // .footer__items
+    &__items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        @media (max-width: $mobileSmall) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    // .footer__item
+    &__item {
+        img {
+            max-width: 100%;
+        }
+    }
+}
