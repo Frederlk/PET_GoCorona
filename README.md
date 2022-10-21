@@ -1,7 +1,5 @@
 # GoCorona
 
-A great example of a one-page business card site of a commercial company.
-
 Fully responsive landing page of Healthcare services.
 
 ## External Links
